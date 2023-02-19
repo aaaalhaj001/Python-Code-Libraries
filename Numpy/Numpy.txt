@@ -1,0 +1,232 @@
+import numpy as np  áÇÏÑÇÌ ãßÊÈÉ numpy 
+
+a=np.array([1,2,3]) #a  æ and array ÏÇáÉ ÇáãÕİæİÉ
+a
+
+b=np.array([[1,2,3],# áÊßÊÇÈÉ ãÕİæİÉ  ãÊÚÏÏ äÓÊÎÏã [[]] ááßÊÇÈÉ 
+           [4,5,6]])
+b
+
+#shape Ôßá ÇáãÕİæŞÉ
+a.shape
+b.shape
+
+
+#get dimension ÇáÇÈÚÇÏ
+a.ndim
+b.ndim
+
+# data type äæÚ ÇáÈíÇäÇÊ 
+a.dtype
+b.dtype
+
+#array size ÍÌã ÇáãÕİæŞÉ
+a.itemsize
+b.itemsize
+a.size
+
+#ÊÍÏíÏ ÚäÕÑ ãÍÏÏ
+b[0,1]
+
+
+# ØÈÇÚÉ Õİ ßÇãá 
+b[0,:]
+
+# ØÈÇÚÉ ÚÇãæÏ ßÇãá 
+b[:,0]
+
+#ÊÛíÑ ÇáŞíã
+b[0,1]=21
+    
+b
+
+
+# geting a littie more fancy[startidex:endindex:stapsize]
+b[1:3]
+
+
+B=np.array([[1,2,3],# áÊßÊÇÈÉ ãÕİæİÉ  ãÊÚÏÏ äÓÊÎÏã [[]] ááßÊÇÈÉ 
+           [4,5,6],
+            [7,8, 9]])
+B
+
+
+#ÊÛíÑ Õİ ßÇãá
+B[2:]=[9,8,7]
+B
+
+
+#ZERO array
+np.zeros((2,2)) #ÖÚ ÚáÇãÉ ŞæÓíä İí ÏÇáÉ æ ŞæÓíä áÍÌã ÇáãÕİæİÇÊ 
+
+
+#one array
+np.ones((2,2),dtype='int32')
+
+
+#ÇáãÕİæİ ÇáÇÍÇíÉ
+np.identity(3,dtype='int32') #ßÊÇÈÉ ÇáÏáÉ ÏÇÎáåÇ ŞæÓíä æ ÖÚ ÑŞã ÏÇÎá ÇáŞæÓíä  
+
+
+#for ather number
+np.full((2,2),45,dtype='int32')
+
+
+#for ather number full_like 
+np.full_like(a,4)
+#ÇáÊÈÏíá ÇáŞíã ãä ãÕİæİÉ ãÍÏÏÉ
+np.full_like(C,[[7,7,3],
+               [94,5,1]
+                [9,7,3]])
+
+
+#ÇŞÇã ÚÔæÇÆíÉ
+#random number
+np.random.rand(4,2)
+
+
+
+# ÇŞÇã ÚÔæÇÆíÉ ÕÍíÍÉ
+#random number int
+np.random.randint(0,10, size=(2,2)) #ÚÏÏ ÇáÇÑŞÇã ÚÔæÇÆíÉ ÇáÊí ÊÑíÏ ÌáÈåã æÍÌã ÇáãÕİæİÉ
+
+
+#áÊßÑÇÑÇáãÕİæİÉ
+arr=np.array([[7,7,3],
+               [4,5,1],
+                [9,7,3]])
+r1=np.repeat(arr,14,axis=0)
+print(r1)
+
+
+
+
+#ÏãÌ ÇáãÕİæİÇÊ İí ãÕİæİÉ æÇÍÏ
+output=np.ones((5,5),dtype='int32')
+print(output)
+
+z=np.zeros((3,3),dtype='int32')
+print(z)
+
+z[1,1]=9
+z
+
+
+output[1:-1,1:-1]=z
+output
+
+
+
+Be careful when copying arrays
+
+#äÓÎÉ ãä ÇáŞíã 
+#ÚäÏ ÇáÇÓÊÈÏÇá äÓÎ äİÓ ÇáŞíã æáÇ ÊÊÈÏá
+# ÇÓÊÎÏÇã ÇáÏÇáÉ äÓÎ() áäÓÎ ÇáŞíã ÈÏæä ÊßÑÇÑ
+ 
+x=np.array([1,2,3])
+y=x.copy()
+y[0]=100  
+x
+
+
+Math
+x=np.array([1,2,3])
+#ÌãÚ ÇáãÕİæİÇÊ
+x+2
+#ØÑÍ ÇáãÕİæİÇÊ
+x-2
+#ÖÑÈ ÇáãÕİæİÇÊ
+x*2
+#ŞÓãÉ ÇáãÕİæİÇÊ
+x/2
+
+
+
+#sin and cos and tan
+np.sin(x)
+np.cos(x)
+np.tan(x)
+
+
+
+Liner algebra
+a=np.ones((2,3))
+print(a)
+b=np.full((3,2),2)
+print(b)
+#ÖÑÈ ÇáãÕİæİÇÊ
+np.matmul(a,b)
+
+
+
+#ÇáãÍÏÏÉ ÇáãÕİæİÉ 
+#find determinant
+s=np.identity(3,dtype='int32')
+np.linalg.det(s)
+
+
+Statistics
+stat=np.array([[1,2,3],[4,5,6]])
+
+
+#ÇÕÛÑ ŞíãÉ İí ÇáãÕæİÉ 
+np.min(stat)
+#ÇßÈÑ ŞíãÉ İí ÇáãÕİæİÉ
+np.max(stat)
+#ãÌãæÚ  ŞíãÇáãÕİæİÉ
+np.sum(stat)
+
+#stat=np.array([[1,2,3,4],[5,6,7,8]])
+#print(stat.shape)# ÍÌã ÇáãÕİæİÉ
+
+stat=np.array([[1,2,3,4],[5,6,7,8]])
+print(stat.reshape((8,1))) #ÇÚÇÏÉ ÍÌã ÇáãÕİæİÉ
+
+ #ÏãÌ ÚÇãæí 
+v1=np.array([1,2,3,4])
+v2= np.array([5,6,7,8])
+np.vstack([v1,v2])
+
+
+#ÏãÌ ÇİŞí 
+h1=np.array([1,2,3,4])
+h2= np.array([5,6,7,8])
+np.hstack([h1,v2])
+
+
+
+load data from file
+
+#ÊäÒíá ÇáÈíÇäÇÊ ãä Çáãáİ 
+filedata=np.genfromtxt("data.txt", delimiter=',')
+filedata=filedata.astype('int32')
+filedata
+
+Boolen masking
+
+#ÔÑØ ÈÚáÇãÉ ÕÍ Çæ ÎØ
+filedata <50
+
+#ÔÑæØ ÇÓÊÎÏÇã ÇáŞíã
+(filedata <50)& (filedata <10) 
+
+#ÊÓÊÎÏã ÚáÇã áäİí ÇáÚÈÇÑÉ
+[~(filedata <50)& (filedata <10)]
+
+
+# ÇÓÊÎÏÇã ÇáÏÇáÊÇä any and all
+np.any(filedata >50)
+np.all(filedata >50)
+
+
+#ÔÑæØ ÇÓÊÎÏÇã ÇáŞíã
+filedata [(filedata <50)& (filedata <10)]
+
+#ÔÑØ ÇÓÊÎÏÇã ÇáŞíã
+filedata [(filedata <50)]
+
+#ÊÍÏÏ ÚÏÏ ãÍÏÏ ãä ÇáŞíã 
+stat=np.array([1,2,3,4,5,6,7,8])
+stat
+stat[[1,4,7]]
+              
